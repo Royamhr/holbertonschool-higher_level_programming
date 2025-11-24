@@ -1,16 +1,15 @@
 #!/usr/bin/python3
-"""This module defines a Rectangle class with width and height,
-area, perimeter, and string representations."""
+"""3-rectangle.py: Rectangle with string representation."""
 
 class Rectangle:
-    """A class that defines a rectangle by width and height."""
+    """Represents a rectangle with width and height."""
 
     def __init__(self, width=0, height=0):
-        """Initialize a new Rectangle instance.
+        """Initialize rectangle with optional width and height.
 
         Args:
-            width (int): width of the rectangle (default 0)
-            height (int): height of the rectangle (default 0)
+            width (int): width of the rectangle.
+            height (int): height of the rectangle.
         """
         self.width = width
         self.height = height
@@ -54,11 +53,7 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Return a string representation of the rectangle with '#'."""
+        """Return a string representation using '#' characters."""
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join(["#" * self.width for _ in range(self.height)])
-
-    def __repr__(self):
-        """Return an official string representation of the rectangle."""
-        return f"Rectangle({self.width}, {self.height})"
