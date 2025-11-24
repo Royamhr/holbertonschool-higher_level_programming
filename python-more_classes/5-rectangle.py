@@ -1,23 +1,24 @@
 #!/usr/bin/python3
-"""5-rectangle.py: Rectangle class with area, perimeter, __str__, __repr__, and __del__."""
+"""5-rectangle.py: Rectangle class with area, perimeter, __str__,
+__repr__, and __del__."""
 
 
 class Rectangle:
-    """Rectangle class that defines a rectangle by width and height."""
+    """Defines a rectangle with width and height."""
 
     def __init__(self, width=0, height=0):
-        """Initialize Rectangle instance.
+        """Initialize a new Rectangle instance.
 
         Args:
-            width (int): width of the rectangle
-            height (int): height of the rectangle
+            width (int): Width of the rectangle.
+            height (int): Height of the rectangle.
         """
         self.width = width
         self.height = height
 
     @property
     def width(self):
-        """Get the width of the rectangle."""
+        """Retrieve the width of the rectangle."""
         return self.__width
 
     @width.setter
@@ -31,7 +32,7 @@ class Rectangle:
 
     @property
     def height(self):
-        """Get the height of the rectangle."""
+        """Retrieve the height of the rectangle."""
         return self.__height
 
     @height.setter
@@ -54,15 +55,16 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Return the rectangle as a string with '#' characters."""
+        """Return the rectangle with '#' characters as string."""
         if self.width == 0 or self.height == 0:
             return ""
-        return "\n".join(["#" * self.width for _ in range(self.height)])
+        lines = ["#" * self.width for _ in range(self.height)]
+        return "\n".join(lines)
 
     def __repr__(self):
-        """Return a string representation that can recreate a new instance using eval()."""
+        """Return a string representation to recreate a new instance."""
         return "Rectangle({}, {})".format(self.width, self.height)
 
     def __del__(self):
-        """Print a message when an instance of Rectangle is deleted."""
+        """Print a message when an instance is deleted."""
         print("Bye rectangle...")
