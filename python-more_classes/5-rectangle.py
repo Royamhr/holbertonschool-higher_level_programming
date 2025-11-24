@@ -1,15 +1,16 @@
 #!/usr/bin/python3
-"""5-rectangle.py: Rectangle class with __del__ method."""
+"""5-rectangle.py: Rectangle class with area, perimeter, __str__, __repr__, and __del__."""
+
 
 class Rectangle:
-    """Represents a rectangle with width and height."""
+    """Rectangle class that defines a rectangle by width and height."""
 
     def __init__(self, width=0, height=0):
-        """Initialize rectangle with optional width and height.
+        """Initialize Rectangle instance.
 
         Args:
-            width (int): width of the rectangle.
-            height (int): height of the rectangle.
+            width (int): width of the rectangle
+            height (int): height of the rectangle
         """
         self.width = width
         self.height = height
@@ -53,15 +54,15 @@ class Rectangle:
         return 2 * (self.width + self.height)
 
     def __str__(self):
-        """Return a string representation using '#' characters."""
+        """Return the rectangle as a string with '#' characters."""
         if self.width == 0 or self.height == 0:
             return ""
         return "\n".join(["#" * self.width for _ in range(self.height)])
 
     def __repr__(self):
-        """Return a string to recreate a new instance via eval()."""
-        return f"Rectangle({self.width}, {self.height})"
+        """Return a string representation that can recreate a new instance using eval()."""
+        return "Rectangle({}, {})".format(self.width, self.height)
 
     def __del__(self):
-        """Print a message when the instance is deleted."""
+        """Print a message when an instance of Rectangle is deleted."""
         print("Bye rectangle...")
